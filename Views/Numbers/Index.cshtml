@@ -1,0 +1,86 @@
+﻿@model Jordan_Green._st10083222._PROG7312._POE.NumbersModel
+
+<style>
+    table {
+        border-collapse: separate;
+        border-spacing: 10px;
+    }
+
+    input[type="radio"] {
+        border: 2px solid #3498db; 
+        padding: 5px; 
+    }
+
+    #quizForm {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: orange;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+<h1>Finding Call numbers</h1>
+
+<hr />
+
+<h2>Level: @ViewBag.Level</h2>
+<p>@ViewBag.Question.Name</p>
+
+<form id="quizForm" asp-action="CheckAnswer" method="post">
+    <table>
+        @foreach (var option in ViewBag.Options)
+        {
+            <tr>
+                <td>
+                    <input type="radio" name="selectedCode" value="@option.Code" />
+                </td>
+                <td>
+                    @($"{option.Code} - {option.Name}")
+                </td>
+            </tr>
+        }
+    </table>
+
+    <hr />
+
+    <h2>Timer: <span id="timer">@ViewBag.Timer</span> seconds</h2>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: @ViewBag.Progress%;" aria-valuenow="@ViewBag.Progress" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <br />
+
+    <input type="submit" value="Quiz Answer" />
+</form>
+
+@if (ViewBag.WrongAnswer != null && (bool)ViewBag.WrongAnswer)
+{
+    <hr />
+    <p style="color: red;">Wrong answer!</p>
+    <p style="color: cadetblue;">The correct answer was: @($"{ViewBag.CorrectCode} - {ViewBag.CorrectAnswer}")</p>
+    <p style="color: forestgreen;">You selected: @($"{ViewBag.SelectedCode} - {ViewBag.SelectedAnswer}")</p>
+    <hr />
+}
+
+@section scripts {
+    <script>
+        var timer = @ViewBag.Timer;
+        var countdown = setInterval(function () {
+            timer--;
+            document.getElementById("timer").innerText = timer;
+            if (timer <= 0) {
+                clearInterval(countdown);
+                document.getElementById("quizForm").submit();
+            }
+        }, 1000);
+    </script>
+}

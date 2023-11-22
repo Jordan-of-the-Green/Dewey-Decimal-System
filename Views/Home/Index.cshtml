@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <html>
+
+    <body>
+
+        <br>
+        <br>
+
+        <div class="logo-box">
+            <img src="~/css/png-clipart-library-2.png" 
+            style="width: 600px!immportant; height: 230px;">
+        </div>
+
+        <br>
+
+        <h1>
+            Dewey Decimal System <br>
+        </h1>
+
+        <hr>
+
+        <a class="1 btn-group" asp-area="" asp-controller="Home" asp-action="CallNumbers">
+                     <img src="~/css/png-clipart-library-2.png" />
+                     <span id="menuHeading">Replacing Books</span>
+                     <span class="tooltiptext"> 
+                         The application shall allow the user to reorder the call numbers in ascending order,
+                         and the application shall check whether the user got the ordering right.
+                     </span>
+
+        </a>
+
+        <a class="2 btn-group" asp-area="" asp-controller="Shuffle" asp-action="Index">
+                    <img src="~/css/png-clipart-library-2.png" />
+                     <span id="menuHeading">Identifying Areas</span>
+                     <span class="tooltiptext"> 
+                         When the user chooses the Identifying areas task, they should be presented with a user
+                         interface where they will match two columns: call number (top level only) and description.
+                     </span>
+        </a>
+
+        <a class="3 btn-group" asp-area="" asp-controller="Numbers" asp-action="Index">
+                    <img src="~/css/png-clipart-library-2.png" />
+                    <span id="menuHeading">Finding Call Numbers</span>
+                    <span class="tooltiptext">
+                        When the user chooses Finding call numbers, the application must load the Dewey Decimal 
+                        classification data into memory from the file created in Step 1.
+                    </span>
+        </a>
+
+    </body>
+
+</html>
+</div>

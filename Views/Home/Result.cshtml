@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Check Order";
+}
+
+<h1>
+    Dewey Decimal System <br>
+</h1>
+
+<hr>
+
+<h2>Correct or Incorrect Answer</h2>
+@if (ViewBag.IsCorrectOrder)
+{
+    <p style="color: green;">Fantastic on getting that correct :).</p>
+    <div id="progressbar">
+        <div style="width: 100%; background-color: green;"></div>
+    </div>
+}
+else
+{
+    <p style="color: red;">Apologies but that is incorrect :(</p>
+    <div id="progressbar">
+        <div style="width: 100%; background-color: red;"></div>
+    </div>
+}
+
+<hr>
+
+<p>Final Score: <span id="finalScore">@ViewBag.Score</span></p>
+
+@Html.ActionLink("Back to Replacing Books", "CallNumbers", "Home", null, new { @class = "btn btn-primary" })

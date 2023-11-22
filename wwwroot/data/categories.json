@@ -1,0 +1,160 @@
+/*
+ ***************************************************************************************
+ *    Title: <Working with JSON in MVC>
+ *    Author: <Suraj Sahoo>
+ *    Date Published: <24 May 2020>
+ *    Date Retrieved: <15 November 2023>
+ *    Code version: <1.0.0>
+ *    Availability: <https://www.c-sharpcorner.com/article/working-with-json-in-mvc/>
+ *
+ ***************************************************************************************
+*/
+
+{
+  "categories": [
+    {
+      "name": "Philosophy & Psychology",
+      "subcategories": [
+        { "code": 100, "name": "Philosophy and Psychology" },
+        { "code": 110, "name": "Metaphysics" },
+        { "code": 111, "name": "Ontology" },
+        { "code": 113, "name": "Cosmology" },
+        { "code": 114, "name": "Space" },
+        { "code": 115, "name": "Time" },
+        { "code": 130, "name": "Paranormal Phenomena" },
+        { "code": 131, "name": "Occult methods for achieving well-being" },
+        { "code": 135, "name": "Dreams and Mysteries" },
+        { "code": 137, "name": "Divinatory Graphology" },
+        { "code": 138, "name": "Physiognomy" },
+        { "code": 160, "name": "Logic" },
+        { "code": 161, "name": "Induction" },
+        { "code": 162, "name": "Deduction" },
+        { "code": 167, "name": "Hypotheses" },
+        { "code": 169, "name": "Analogy" },
+        { "code": 170, "name": "Ethics" },
+        { "code": 171, "name": "Systems and Doctrines" },
+        { "code": 172, "name": "Political Ethics" },
+        { "code": 173, "name": "Ethics of Family Relationships" },
+        { "code": 174, "name": "Economic and Professional Ethics" }
+      ]
+    },
+    {
+      "name": "Religion",
+      "subcategories": [
+        { "code": 200, "name": "Religion" },
+        { "code": 210, "name": "Natural Theology" },
+        { "code": 211, "name": "Concepts of God" },
+        { "code": 212, "name": "Existence, Attributes of God" },
+        { "code": 213, "name": "Creation" },
+        { "code": 216, "name": "Good and Evil" }
+      ]
+    },
+    {
+      "name": "Social Science",
+      "subcategories": [
+        { "code": 300, "name": "Social Sciences" },
+        { "code": 330, "name": "Economics" },
+        { "code": 331, "name": "Labor Economics" },
+        { "code": 332, "name": "Financial Economics" },
+        { "code": 333, "name": "Land Economics" },
+        { "code": 334, "name": "Cooperatives" },
+        { "code": 340, "name": "Law" },
+        { "code": 341, "name": "International Law" },
+        { "code": 342, "name": "Constitutional and Administrative Law" },
+        { "code": 345, "name": "Criminal Law" },
+        { "code": 344, "name": "Private Law" }
+      ]
+    },
+    {
+      "name": "Language",
+      "subcategories": [
+        { "code": 400, "name": "Language" },
+        { "code": 410, "name": "Linguistics" },
+        { "code": 411, "name": "Writing Systems" },
+        { "code": 412, "name": "Etymology" },
+        { "code": 413, "name": "Dictionaries" },
+        { "code": 414, "name": "Phonology" }
+      ]
+    },
+    {
+      "name": "Natural Science and Mathematics",
+      "subcategories": [
+        { "code": 500, "name": "Natural Sciences and Mathematics" },
+        { "code": 510, "name": "Mathematics" },
+        { "code": 511, "name": "General Principles" },
+        { "code": 512, "name": "Algebra and Theory" },
+        { "code": 513, "name": "Arithmetic" },
+        { "code": 515, "name": "Analysis" },
+        { "code": 516, "name": "Geometry" },
+        { "code": 530, "name": "Physics" },
+        { "code": 532, "name": "Fluid Mechanics" },
+        { "code": 533, "name": "Gas Mechanics" },
+        { "code": 536, "name": "Heat" },
+        { "code": 537, "name": "Electricity and Electronics" },
+        { "code": 538, "name": "Magnetism" }
+      ]
+    },
+    {
+      "name": "Applied Science",
+      "subcategories": [
+        { "code": 600, "name": "Applied Sciences" },
+        { "code": 610, "name": "Medicine" },
+        { "code": 611, "name": "Human Anatomy" },
+        { "code": 612, "name": "Human Physiology" },
+        { "code": 613, "name": "Promotion of Health" },
+        { "code": 616, "name": "Diseases" },
+        { "code": 620, "name": "Engineering and Allied Operations" },
+        { "code": 621, "name": "Applied Physics" },
+        { "code": 622, "name": "Mining and Related Operations" },
+        { "code": 624, "name": "Civil Engineering" },
+        { "code": 627, "name": "Hydraulic Engineering" },
+        { "code": 630, "name": "Agriculture" },
+        { "code": 631, "name": "Techniques, Equipment, Materials" },
+        { "code": 632, "name": "Plant Injuries, Diseases, Pests" },
+        { "code": 633, "name": "Field and Plantation crops" },
+        { "code": 636, "name": "Animal Husbandry" }
+      ]
+    },
+    {
+      "name": "The Arts",
+      "subcategories": [
+        { "code": 700, "name": "The Arts" },
+        { "code": 710, "name": "Civic and Landscape Art" },
+        { "code": 711, "name": "Area Planning (Civic Art)" },
+        { "code": 712, "name": "Landscape Architecture" },
+        { "code": 714, "name": "Water Features" },
+        { "code": 717, "name": "Structures" },
+        { "code": 720, "name": "Architecture" },
+        { "code": 721, "name": "Architectural Structure" },
+        { "code": 725, "name": "Public Structures" },
+        { "code": 726, "name": "Religious Buildings" },
+        { "code": 727, "name": "Buildings for Education and Research" },
+        { "code": 730, "name": "Plastic Arts, Sculpture" },
+        { "code": 732, "name": "Sculpture to ca. 500" },
+        { "code": 735, "name": "Sculpture from 1400" },
+        { "code": 738, "name": "Ceramic Arts" },
+        { "code": 739, "name": "Art Metalwork" },
+        { "code": 750, "name": "Painting and Paintings" },
+        { "code": 751, "name": "Painting Techniques, Equipment, Forms" },
+        { "code": 752, "name": "Colour" },
+        { "code": 754, "name": "Genre Paintings" },
+        { "code": 757, "name": "Human Figures" }
+      ]
+    },
+    {
+      "name": "Literature",
+      "subcategories": [
+        { "code": 800, "name": "Literature" },
+        { "code": 810, "name": "American Literature in English" },
+        { "code": 811, "name": "Poetry" },
+        { "code": 812, "name": "Drama" },
+        { "code": 813, "name": "Fiction" },
+        { "code": 814, "name": "Essays" },
+        { "code": 815, "name": "Speeches" },
+        { "code": 816, "name": "Letters" },
+        { "code": 817, "name": "Satire and Humour" }
+      ]
+    }
+  ]
+}
+

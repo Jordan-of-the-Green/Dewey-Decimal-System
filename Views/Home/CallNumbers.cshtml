@@ -1,0 +1,79 @@
+﻿@****************************************************************************************
+ *    Title: <JavaScript Timing Events>
+ *    Author: <W3Schools>
+ *    Date Published: <2023>
+ *    Date Retrieved: <20 November 2023>
+ *    Code version: <1.0.0>
+ *    Availability: <https://www.w3schools.com/js/js_timing.asp>
+ *
+ ****************************************************************************************@
+
+@****************************************************************************************
+ *    Title: <W3.CSS Progress Bars>
+ *    Author: <W3Schools>
+ *    Date Published: <2023>
+ *    Date Retrieved: <18 November 2023>
+ *    Code version: <1.0.0>
+ *    Availability: <https://www.w3schools.com/w3css/w3css_progressbar.asp>
+ *
+ ****************************************************************************************@
+
+@{
+    ViewData["Title"] = "Replacing Books";
+}
+
+<div class="container">
+    <h2>Replacing Books</h2>
+    <p>Reorder the following call numbers in ascending order:</p>
+    <hr>
+
+    @using (Html.BeginForm("Result", "Home"))
+    {
+        <div style="display: flex; align-items: center;">
+            <div style="flex: 1;">
+                <ul>
+                    @foreach (var number in ViewBag.CallNumbers)
+                    {
+                        <li>@number</li>
+                    }
+                </ul>
+            </div>
+
+            <div style="flex: 1;">
+                @foreach (var number in ViewBag.CallNumbers)
+                {
+                    <input type="text" name="orderedCallNumbers[]" value="@number" />
+                }
+            </div>
+        </div>
+
+        <hr>
+
+        <p>Time remaining: <span id="timer">@ViewBag.Timer</span> seconds</p>
+        <p>Score: <span id="score">@ViewBag.Score</span></p>
+
+        <button type="submit" id="checkOrder">Verify Order</button>
+    }
+</div>
+
+@section scripts {
+    <script>
+        let timeLeft = @ViewBag.Timer;
+        let width = 0;
+        const progressBar = document.querySelector("#progressbar div");
+
+        const interval = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                document.getElementById("checkOrder").click();
+                return;
+            }
+
+            timeLeft--;
+            document.getElementById("timer").innerText = timeLeft;
+
+            width += 100 / @ViewBag.Timer;
+            progressBar.style.width = `${width}%`;
+        }, 1000);
+    </script>
+}
